@@ -14,6 +14,58 @@ struct prop {
     char *prop_name;
 };
 
+struct android_version {
+    char *number;
+    char *name;
+};
+
+char *
+android_to_name(const char *version)
+{
+    int i;
+    char *name = NULL;
+
+    /* https://en.wikipedia.org/wiki/Android_version_history#Overview */
+    struct android_version versions[] = {
+        {"9.0",     "Pie"},
+        {"8.0",     "Oreo"},
+        {"7.0",     "Nougat"},
+        {"6.0",     "Marshmallow"},
+        {"5.0",     "Lollipop"},
+        {"4.4",     "KitKat"},
+        {"4.1",     "Jelly Bean"},
+        {"4.0",     "Ice Cream Sandwich"},
+        {"3.0",     "Honeycomb"},
+        {"2.3",     "Gingerbread"},
+        {"2.2",     "Froyo"},
+        {"2.0",     "Eclair"},
+        {"1.6",     "Donut"},
+        {"1.5",     "Cupcake"},
+    };
+
+
+    for (i = 0; i < (sizeof(versions) / sizeof(versions[0])); i++ ) {
+        if (!strncmp(version, versions[i].number, 3)) {
+            name = versions[i].name;
+            break;
+        }
+    }
+
+    if (name == NULL) {
+        for (i = 0; i < (sizeof(versions) / sizeof(versions[0])); i++ ) {
+            if (!strncmp(version, versions[i].number, 1)) {
+                name = versions[i].name;
+                break;
+            }
+        }
+    }
+
+    if (name == NULL)
+        name = "Unknow";
+
+    return (name);
+}
+
 static void system_kernel(void)
 {
     struct utsname uts;
@@ -73,7 +125,12 @@ static void system_properties(struct prop *array, int size)
 
         len = __system_property_get(array[i].prop_name, value);
         value[len] = '\0';
-        printf("%-25s: %s\n", array[i].key_name, value);
+        if (i == 2) {
+            printf("%-25s: %s", array[i].key_name, value);
+            printf(" (%s)\n", android_to_name(value));
+        } else {
+            printf("%-25s: %s\n", array[i].key_name, value);
+        }
     }
 
     system_cpu();
