@@ -9,6 +9,8 @@
 #include <sys/utsname.h>
 #include <sys/system_properties.h>
 
+#define nitems(container)      (sizeof((container)) / sizeof((container)[0]))
+
 struct prop {
     char *key_name;
     char *prop_name;
@@ -44,7 +46,7 @@ android_to_name(const char *version)
     };
 
 
-    for (i = 0; i < (sizeof(versions) / sizeof(versions[0])); i++ ) {
+    for (i = 0; i < nitems(versions); i++ ) {
         if (!strncmp(version, versions[i].number, 3)) {
             name = versions[i].name;
             break;
@@ -52,7 +54,7 @@ android_to_name(const char *version)
     }
 
     if (name == NULL) {
-        for (i = 0; i < (sizeof(versions) / sizeof(versions[0])); i++ ) {
+        for (i = 0; i < nitems(versions); i++ ) {
             if (!strncmp(version, versions[i].number, 1)) {
                 name = versions[i].name;
                 break;
@@ -148,7 +150,7 @@ main(void)
         {.key_name = "Build number", .prop_name = "ro.build.display.id"},
     };
 
-    system_properties(props, sizeof(props) / sizeof(props[0]));
+    system_properties(props, nitems(props));
 
     return (0);
 }
