@@ -140,7 +140,7 @@ int
 main(void)
 {
     struct prop props[] = {
-        {.key_name = "Model number", .prop_name = "ro.product.model"},
+        {.key_name = "Model name", .prop_name = "ro.product.model"},
         {.key_name = "Android codename", .prop_name = "ro.build.product"},
         {.key_name = "Android version", .prop_name = "ro.build.version.release"},
         {.key_name = "Android SDK version", .prop_name = "ro.build.version.sdk"},
