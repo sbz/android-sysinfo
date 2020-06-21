@@ -37,6 +37,20 @@ make run
 
 On few of my personal Android devices, this is what output information look likes.
 
+### HTC Magic
+
+[HTC Magic](https://en.wikipedia.org/wiki/HTC_Magic)
+
+```
+Model name               : HTC Magic
+Android codename         : sapphire
+Android version          : 2.2.1
+Android SDK version      : 8
+Kernel version           : Linux 2.6.32.9-27237-gbe746fb android-build@apa26.mtv.corp.google.com #1 PREEMPT Thu Jul 22 15:50:12 PDT 2010 armv6l
+Baseband version         : 62.50SJ.20.17U_2.22.28.25
+Build number             : FRG83D
+
+```
 ### Nexus S
 
 [Nexus S](https://en.wikipedia.org/wiki/Nexus_S)
