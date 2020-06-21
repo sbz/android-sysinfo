@@ -1,6 +1,6 @@
 ARCH := $(shell adb shell getprop ro.product.cpu.abi)
 SDK_VERSION := $(shell adb shell getprop ro.build.version.sdk)
-DESTDIR := /data/local/tmp/
+DESTDIR := /data/local/tmp
 
 all: install
 

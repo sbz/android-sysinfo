@@ -1,5 +1,11 @@
+#include <fcntl.h>
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
 
+#include <sys/types.h>
+#include <sys/uio.h>
 #include <sys/utsname.h>
 #include <sys/system_properties.h>
 
@@ -23,6 +29,39 @@ static void system_kernel(void)
     }
 }
 
+static void system_cpu(void)
+{
+    int i, fd, bytes;
+    char *p;
+    char buffer[1024];
+    const char *needle = "Processor    :";
+
+    fd = open("/proc/cpuinfo", O_RDONLY);
+    if (fd == -1) {
+        return;
+    }
+
+    bytes = read(fd, buffer, sizeof(buffer) - 1);
+    if (bytes == -1) {
+        return;
+    }
+
+    buffer[bytes] = '\0';
+    p = buffer;
+
+    p = strstr(p, "Processor	:");
+    p += strlen(needle) - 1;
+
+    printf("%-25s: ", "CPU");
+    while ( *p != '\n') {
+        printf("%c", *p++);
+    }
+
+    printf("\n");
+
+    close(fd);
+}
+
 static void system_properties(struct prop *array, int size)
 {
     int i, len;
@@ -37,6 +76,7 @@ static void system_properties(struct prop *array, int size)
         printf("%-25s: %s\n", array[i].key_name, value);
     }
 
+    system_cpu();
 }
 
 int
