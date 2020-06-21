@@ -6,7 +6,7 @@
 properties of any android device using the [system properties][1] [C API][2]
 existing in Android libc [bionic][3].
 
-It is simlar to the `Settings or System > About the Phone` system information
+It is simlar to the `Settings or System > About phone` system information
 displayed on your mobile device.
 
 It reports the model, build version and kernel info, etc.
@@ -42,7 +42,7 @@ On few of my personal Android devices, this is what output information look like
 [Nexus S](https://en.wikipedia.org/wiki/Nexus_S)
 
 ```
-Model number             : Nexus S
+Model name               : Nexus S
 Android codename         : crespo
 Android version          : 4.1.2
 Android SDK version      : 16
@@ -51,12 +51,26 @@ Baseband version         : I9023XXKI1
 Build number             : JZO54K
 ```
 
+### Nexus 6
+
+[Nexus 6](https://en.wikipedia.org/wiki/Nexus_6)
+
+```
+Model name               : Nexus 6
+Android codename         : shamu
+Android version          : 7.1.1
+Android SDK version      : 25
+Kernel version           : Linux 3.10.40-gc7ebca13933 android-build@wprh2.hot.corp.google.com #1 SMP PREEMPT Wed Aug 16 15:25:44 UTC 2017 armv7l
+Baseband version         : MDM9625_104670.31.05.45R
+Build number             : N6F27M
+```
+
 ### Huawei P20
 
 [Huawei P20 Pro](https://en.wikipedia.org/wiki/Huawei_P20)
 
 ```
-Model number             : CLT-L09
+Model name               : CLT-L09
 Android codename         : CLT
 Android version          : 9
 Android SDK version      : 28
