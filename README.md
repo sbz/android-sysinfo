@@ -107,6 +107,10 @@ Baseband version         : 21C20B369S009C000
 Build number             : CLT-L09 9.1.0.372(C782E12R1P11)
 ```
 
+## License
+
+The project is released under [MIT license](https://en.wikipedia.org/wiki/MIT_License).
+
 [1]: https://android.googlesource.com/platform/bionic/+/master/libc/include/sys/system_properties.h
 [2]: https://developer.android.com/ndk/guides/stable_apis#c_library
 [3]: https://android.googlesource.com/platform/bionic/
