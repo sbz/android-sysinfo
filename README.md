@@ -79,6 +79,20 @@ Baseband version         : MDM9625_104670.31.05.45R
 Build number             : N6F27M
 ```
 
+### Huawei Y5 II
+
+[Huawei Y series](https://en.wikipedia.org/wiki/List_of_Huawei_phones#Ascend_Y_series)
+
+```
+Model name               : HUAWEI CUN-L21
+Android codename         : CUN-L21
+Android version          : 5.1 (Lollipop)
+Android SDK version      : 22
+Kernel version           : Linux 3.10.65+ jslave@WUH1000021377 #1 SMP PREEMPT Thu Jul 5 11:30:57 CST 2018 armv7l
+Baseband version         : MOLY.LR9.W1444.MD.LWTG.MP.V42.P40,MOLY.LR9.W1444.MD.LWTG.MP.V42.P40, 2017/07/07 17:29
+Build number             : CUN-L21C429B109
+```
+
 ### Huawei P20
 
 [Huawei P20 Pro](https://en.wikipedia.org/wiki/Huawei_P20)
