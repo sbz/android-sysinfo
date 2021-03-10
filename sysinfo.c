@@ -29,6 +29,8 @@ android_to_name(const char *version)
 
     /* https://en.wikipedia.org/wiki/Android_version_history#Overview */
     struct android_version versions[] = {
+        {"11",      "Android 11"},
+        {"10",      "Android 10"},
         {"9.0",     "Pie"},
         {"8.0",     "Oreo"},
         {"7.0",     "Nougat"},
@@ -68,7 +70,8 @@ android_to_name(const char *version)
     return (name);
 }
 
-static void system_kernel(void)
+static void
+system_kernel(void)
 {
     struct utsname uts;
     char build_host[512];
@@ -83,7 +86,8 @@ static void system_kernel(void)
     }
 }
 
-static void system_cpu(void)
+static void
+system_cpu(void)
 {
     int i, fd, bytes;
     char *p;
@@ -116,7 +120,8 @@ static void system_cpu(void)
     close(fd);
 }
 
-static void system_properties(struct prop *array, int size)
+static void
+system_properties(struct prop *array, int size)
 {
     int i, len;
     char value[1024] = {0};
