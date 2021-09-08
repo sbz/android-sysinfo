@@ -107,6 +107,20 @@ Baseband version         : 21C20B369S009C000
 Build number             : CLT-L09 9.1.0.372(C782E12R1P11)
 ```
 
+### Samsung Galaxy A21S
+
+[Samsung Galaxy A21S](https://en.wikipedia.org/wiki/Samsung_Galaxy_A21s)
+
+```
+Model name               : SM-A217F
+Android codename         : a21s
+Android version          : 11 (Android 11)
+Android SDK version      : 30
+Kernel version           : Linux 4.19.132-21842546 dpi@VPDJR108 #1 SMP PREEMPT Wed Jun 23 18:40:47 +07 2021 aarch64
+Baseband version         : A217FXXU6CUF4,A217FXXU6CUF4
+Build number             : RP1A.200720.012.A217FXXU6CUF5
+```
+
 ## License
 
 The project is released under [MIT license](https://en.wikipedia.org/wiki/MIT_License).
