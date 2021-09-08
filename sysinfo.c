@@ -91,7 +91,8 @@ system_cpu(void)
 {
     int i, fd, bytes;
     char *p;
-    char buffer[1024];
+    char *s;
+    char buffer[128];
     const char *needle = "Processor    :";
 
     fd = open("/proc/cpuinfo", O_RDONLY);
@@ -101,22 +102,29 @@ system_cpu(void)
 
     bytes = read(fd, buffer, sizeof(buffer) - 1);
     if (bytes == -1) {
-        return;
+        goto cleanup;
     }
 
     buffer[bytes] = '\0';
     p = buffer;
 
-    p = strstr(p, "Processor	:");
-    p += strlen(needle) - 1;
+    s = strstr(p, "model name	:");
+    if (s == NULL)
+        s = strstr(p, "Processor	:");
+        if (s == NULL)
+            goto cleanup;
+
+    s += strlen(needle) - 1;
 
     printf("%-25s: ", "CPU");
-    while ( *p != '\n') {
-        printf("%c", *p++);
+
+    while ( *s != '\n') {
+        printf("%c", *s++);
     }
 
     printf("\n");
 
+cleanup:
     close(fd);
 }
 
