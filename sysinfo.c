@@ -21,6 +21,31 @@ struct android_version {
     char *name;
 };
 
+/* https://en.wikipedia.org/wiki/Android_version_history#Overview */
+static struct android_version versions[] = {
+    {"15",      "Android 15"},
+    {"14",      "Android 14"},
+    {"13",      "Android 13"},
+    {"12.1",    "Android 12L"},
+    {"12",      "Android 12"},
+    {"11",      "Android 11"},
+    {"10",      "Android 10"},
+    {"9.0",     "Pie"},
+    {"8.0",     "Oreo"},
+    {"7.0",     "Nougat"},
+    {"6.0",     "Marshmallow"},
+    {"5.0",     "Lollipop"},
+    {"4.4",     "KitKat"},
+    {"4.1",     "Jelly Bean"},
+    {"4.0",     "Ice Cream Sandwich"},
+    {"3.0",     "Honeycomb"},
+    {"2.3",     "Gingerbread"},
+    {"2.2",     "Froyo"},
+    {"2.0",     "Eclair"},
+    {"1.6",     "Donut"},
+    {"1.5",     "Cupcake"},
+};
+
 char *
 android_to_name(const char *version)
 {
